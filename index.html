@@ -7,27 +7,29 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background: #f5f5f5; color: #333; }
-.header { background: #fff; padding: 20px 40px; border-bottom: 3px solid #4a7c59; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-.header h1 { font-size: 22px; color: #2d5a3d; letter-spacing: -0.5px; }
-.header h1 span { font-weight: 300; color: #888; font-size: 14px; margin-left: 12px; }
+.header { background: #fff; padding: 20px 40px; border-bottom: 3px solid #d9272d; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.header-left { display: flex; align-items: center; gap: 16px; }
+.header-logo { height: 32px; }
+.header h1 { font-size: 15px; color: #343e48; letter-spacing: -0.5px; }
+.header h1 span { font-weight: 300; color: #888; font-size: 14px; margin-left: 0; display: block; }
 .search-box { display: flex; align-items: center; gap: 10px; }
 .search-box input { padding: 8px 16px; border: 1px solid #ccc; border-radius: 20px; font-size: 14px; width: 280px; outline: none; transition: border-color 0.2s; }
-.search-box input:focus { border-color: #4a7c59; }
+.search-box input:focus { border-color: #d9272d; }
 .search-count { font-size: 12px; color: #888; }
 .tabs { background: #fff; padding: 0 40px; border-bottom: 1px solid #e0e0e0; display: flex; gap: 0; }
 .tab { padding: 12px 24px; cursor: pointer; font-size: 14px; font-weight: 500; color: #666; border-bottom: 3px solid transparent; transition: all 0.2s; }
-.tab:hover { color: #4a7c59; }
-.tab.active { color: #2d5a3d; border-bottom-color: #4a7c59; font-weight: 700; }
+.tab:hover { color: #d9272d; }
+.tab.active { color: #343e48; border-bottom-color: #d9272d; font-weight: 700; }
 .content { padding: 20px 40px 60px; max-width: 1400px; margin: 0 auto; }
 .legend { text-align: right; font-size: 11px; color: #999; margin-bottom: 8px; }
-.category-header { background: linear-gradient(135deg, #4a7c59, #5d9a6e); color: #fff; padding: 14px 20px; font-size: 18px; font-weight: 700; margin-top: 24px; border-radius: 6px 6px 0 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.category-header { background: linear-gradient(135deg, #343e48, #4a5568); color: #fff; padding: 14px 20px; font-size: 18px; font-weight: 700; margin-top: 24px; border-radius: 6px 6px 0 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
 .category-header:first-child { margin-top: 0; }
 .category-header .toggle { font-size: 12px; opacity: 0.7; }
-.category-header:hover { background: linear-gradient(135deg, #3d6b4c, #4f8a5f); }
+.category-header:hover { background: linear-gradient(135deg, #2a3340, #3d4a5c); }
 .product-table { width: 100%; border-collapse: collapse; background: #fff; margin-bottom: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
 .product-table th { background: #f8f9fa; padding: 10px 8px; font-size: 12px; font-weight: 600; color: #555; border: 1px solid #e0e0e0; text-align: center; }
 .product-table td { padding: 10px 8px; border: 1px solid #e8e8e8; vertical-align: middle; font-size: 13px; }
-.product-table tr:hover { background: #f0f7f2; }
+.product-table tr:hover { background: #fdf2f2; }
 .product-table tr.hidden { display: none; }
 .img-cell { width: 70px; text-align: center; }
 .img-cell img { max-width: 60px; max-height: 60px; object-fit: contain; border-radius: 4px; }
@@ -58,7 +60,10 @@ body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; backgrou
 <body>
 
 <div class="header">
-    <h1>LF FOOD <span>제품 스펙리스트</span></h1>
+    <div class="header-left">
+        <img src="images/lf-food-logo.svg" alt="LF FOOD" class="header-logo">
+        <h1>제품 스펙리스트</h1>
+    </div>
     <div class="search-box">
         <input type="text" id="searchInput" placeholder="제품명, 코드, 브랜드로 검색..." oninput="filterProducts()">
         <span class="search-count" id="searchCount"></span>
